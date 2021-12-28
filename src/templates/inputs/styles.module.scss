@@ -1,0 +1,16 @@
+.order-select-root {
+  display: flex;
+  :global(.MuiFormControl-root) {
+    flex-grow: 1;
+  }
+  
+}
+
+.order-icon-asc {
+  transition: transform 200ms;
+}
+
+.order-icon-desc {
+  @extend .order-icon-asc;
+  transform: rotate(180deg);
+}

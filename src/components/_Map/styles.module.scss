@@ -1,0 +1,18 @@
+.tooltip-container {
+  position: absolute;
+  z-index: 10000;
+  // background-color: white;
+  // padding: 8px;
+}
+
+.root-node {
+  width: inherit;
+  height: inherit;
+}
+
+:global(.map-container) {
+  cursor: grab;
+  > div {
+    cursor: inherit !important;
+  }
+}

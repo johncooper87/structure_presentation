@@ -1,0 +1,61 @@
+@import '../../theme';
+
+.drawer {
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+  }
+}
+
+.drawer-paper {
+  z-index: 1000;
+  top: unset;
+  @media only screen and (min-width: $mobile-width) {
+    padding-top: var(--topbar-height);
+  }
+  width: $rightbar-width;
+  max-width: 100%;
+}
+
+.inner {
+  @media only screen and (min-width: $mobile-width) {
+    min-height: calc(100vh - var(--topbar-height));
+  }
+  @media only screen and (max-width: $mobile-width) {
+    min-height: calc(100vh);
+  }
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;
+  text-align: left;
+}
+
+.header {
+  padding: 12px 0px;
+}
+
+.content {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  // overflow: auto;
+  flex-grow: 1;
+  > * + * {
+    margin-top: 12px;
+  }
+}
+
+.footer {
+  padding: 12px 0px;
+  display: flex;
+  justify-content: center;
+  > * + * {
+    margin-left: 12px;
+  }
+}

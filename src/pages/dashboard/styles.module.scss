@@ -1,0 +1,43 @@
+@import '~react-grid-layout/css/styles.css';
+@import '~react-resizable/css/styles.css';
+
+.responsiveGridLayout {
+  width: calc(100vw - var(--rightbar-width, 0px) - var(--leftbar-width, 0px) - 48px);
+}
+
+.grid-item {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.grid-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+
+.grid-item-title {
+  max-width: calc(100% - 20px);
+  display: flex;
+  align-items: center;
+}
+
+.grid-item-title-text {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-item-content {
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+}
+
+:global(.draggable) {
+  cursor: grab;
+}

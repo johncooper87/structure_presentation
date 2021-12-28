@@ -1,0 +1,11 @@
+@import '../../theme.scss';
+
+.root {
+  @media only screen and (max-width: $mobile-width) {
+    margin-top: -4px;
+  }
+  @media only screen and (min-width: $mobile-width) {
+    padding-top: calc(var(--topbar-extra-height) - 4px);
+    margin-bottom: calc(-1 * var(--topbar-extra-height));
+  }
+}

@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.title {
+  user-select: 'none';
+}
+
+// .select {
+//   margin-left: 8px;
+// }

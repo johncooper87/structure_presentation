@@ -1,0 +1,101 @@
+stages:
+  - build
+  - deploy
+  - notify
+
+build:
+  stage: build
+  image: node:14.15.0-alpine3.12
+  only:
+    - develop
+    - test
+    - prod
+    - next-ui
+  cache:
+    key: $CI_PROJECT_ID
+    policy: pull-push
+    paths:
+      - node_modules
+  script:
+    - yarn 
+    - yarn build
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+
+deploy_next_ui:
+  stage: deploy
+  image: alpine
+  only:
+    - next-ui
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - apk add --no-cache rsync openssh
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - rsync -rav --delete build/ admin@91.201.43.101:/home/admin/kbi_new_ui/ui/
+
+deploy_on_test:
+  stage: deploy
+  image: alpine
+  only:
+    - test
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - apk add --no-cache rsync openssh
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - rsync -rav --delete build/ admin@91.201.43.101:/home/admin/kbi/ui/
+
+deploy_on_prod:
+  stage: deploy
+  image: alpine
+  only:
+    - prod
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - apk add --no-cache rsync openssh
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY_PROD" >> ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - rsync -rav --delete build/ gaskar@185.221.154.224:/home/gaskar/kbi/ui/
+
+on_success:
+  stage: notify
+  only:
+    - develop
+    - test
+    - prod
+  variables:
+    GIT_STRATEGY: none
+  when: on_success
+  script:
+    - TEXT="✅ KBI UI $CI_COMMIT_REF_SLUG build succes"
+    - URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+    - wget -q --post-data="chat_id=$TELEGRAM_CHAT_ID&disable_web_page_preview=1&text=$TEXT" "$URL" > /dev/null
+
+on_fail:
+  stage: notify
+  only:
+    - develop
+    - test
+    - prod
+  variables:
+    GIT_STRATEGY: none
+  when: on_failure
+  script:
+    - TEXT="❌ KBI UI $CI_COMMIT_REF_SLUG build failure%0A$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID"
+    - URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+    - wget -q --post-data="chat_id=$TELEGRAM_CHAT_ID&disable_web_page_preview=1&text=$TEXT" "$URL" > /dev/null

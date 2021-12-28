@@ -1,0 +1,40 @@
+.indoor-zones-map {
+  position: relative;
+  > span {
+    > :global(.MuiAutocomplete-root) {
+      position: absolute;
+      bottom: 0px;
+      right: 4px;
+      z-index: 500;
+      :global(.MuiFormControl-root) {
+        background-color: white;
+        :global(.MuiInputLabel-outlined.MuiInputLabel-shrink) {
+          color: #000c;
+          background-color: white;
+          padding: 3px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.controlContainer {
+  position: absolute;
+  z-index: 500;
+  top: 110px;
+  left: 12px;
+  height: 31px;
+  width: 31px;
+  background-color: #ffff;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 65%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: rgb(248, 243, 243);
+  }
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+.device-worker-select {
+  display: flex;
+  align-items: flex-start;
+  :global(.MuiAvatar-root) {
+    margin-right: 12px;
+    margin-top: 8px;
+  }
+}

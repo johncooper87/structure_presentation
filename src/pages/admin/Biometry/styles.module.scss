@@ -1,0 +1,11 @@
+.root {
+  padding: 24px;
+  overflow: auto;
+}
+
+.requestDialog {
+  :global(.MuiDialog-paper) {
+    min-width: 500px;
+    height: auto;
+  }
+}

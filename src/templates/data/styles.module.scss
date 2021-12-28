@@ -1,0 +1,49 @@
+.icon-with-label {
+  display: flex;
+  align-items: center;
+  :global(.MuiSvgIcon-root) {
+    margin-right: 4px;
+  }
+  p {
+    display: inline;
+  }
+}
+
+.chip {
+  height: auto;
+  padding: 2px 0px;
+  background-color: #f0f0f0;
+}
+
+.chip-list {
+  margin: 0px -2px -2px 0px;
+  .chip {
+    margin: 0px 2px 2px 0px;
+    :global(.MuiChip-label) {
+      max-width: 200px;
+    }
+  }
+}
+
+.avatar {
+  color: unset;
+  background-color: unset;
+}
+
+.attached {
+  color: #5dbb82;
+  border-color: #5dbb82;
+}
+
+.archive {
+  color: rgba(0, 0, 0, 0.26);
+  border-color: rgba(0, 0, 0, 0.26);
+}
+
+.user-avatar {
+  position: relative;
+  .placeholder {
+    position: absolute;
+    top: 0px;
+  }
+}

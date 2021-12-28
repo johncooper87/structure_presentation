@@ -1,0 +1,47 @@
+@import '../../theme';
+
+.top-bar {
+  // z-index:  - 1,
+  // & :global(.MuiIconButton-root) {
+  //   color: inherit;
+  // }
+  @media only screen and (min-width: $mobile-width) {
+    padding-bottom: var(--topbar-extra-height);
+  }
+  @media only screen and (min-width: $mobile-width) {
+    padding-left: var(--minimized-leftbar-width);
+  }
+  @media only screen and (min-width: $tablet-width) {
+    padding-left: var(--leftbar-width);
+  }
+  // @media only screen and (min-width: $mobile-width) {
+  //   padding-bottom: calc(var(--list-actions-height) / 2);
+  // }
+
+  @media only screen and (max-width: $mobile-width) {
+    background-color: $color-primary-dark;
+    & :global(.MuiIconButton-root),
+    & :global(.MuiSvgIcon-colorAction) {
+      color: inherit;
+    }
+
+    & :global(.MuiInput-underline):before,
+    & :global(.MuiInput-underline):after {
+      border-bottom-color: inherit;
+    }
+  }
+}
+
+// .app-name {
+//   text-align: center;
+//   width: calc($left-bar-width - 24px);
+//   font-size: 22px;
+// }
+
+.menu-button {
+  margin-right: 12px;
+  display: var(--menu-button-display);
+  & :global(.badge) {
+    background-color: $color-alert;
+  }
+}

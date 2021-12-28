@@ -1,0 +1,167 @@
+@import '../../../theme.scss';
+
+.base-numbers {
+  margin-top: 24px;
+  > :global(.MuiGrid-item) {
+    flex-grow: 1;
+    > :global(.MuiPaper-root) {
+      padding: 8px;
+      :first-child {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 12px;
+      }
+      :last-child {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.chart-paper {
+  padding: 12px;
+  margin-top: 16px;
+  height: unset;
+}
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px;
+}
+
+.charts-per-day {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  @media only screen and (max-width: $mobile-width) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+
+.chart-per-day {
+  position: relative;
+  max-width: 200px;
+  > :first-child {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+}
+
+.chart-for-period {
+  flex-grow: 1;
+  max-height: 300px;
+  > canvas {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+.legend-container {
+  flex-grow: 1;
+  padding: 8px 8px 8px 48px;
+  @media only screen and (max-width: $mobile-width) {
+    padding: 8px 8px 8px 8px;
+  }
+  font-size: 12px;
+  height: 100%;
+  overflow: auto;
+  max-height: 320px;
+  width: min-content;
+  // max-width: 600px;
+}
+
+.legend-marker {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  > :last-child {
+    font-weight: 500;
+  }
+  &:nth-child(odd) {
+    .legend-label {
+      background-color: #eee9;
+    }
+  }
+}
+
+.nested-container {
+  margin-left: 18px;
+  padding: 4px 16px;
+}
+
+.legend-label {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 6px;
+  .legend-count {
+    display: flex;
+    align-items: center;
+  }
+  .icon-container {
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    svg {
+      font-size: 16px;
+    }
+  }
+}
+
+:global(.MuiToggleButton-root) {
+  padding: 4px 8px;
+  &:global(.Mui-selected) {
+    color: #3f51b5;
+    background-color: transparent;
+    border-color: rgba(63, 81, 181, 0.5);
+  }
+  &:global(.Mui-selected:hover) {
+    color: #3f51b5;
+    background-color: #3f51b50c;
+    border-color: rgba(63, 81, 181, 0.5);
+  }
+}
+
+.alert-text {
+  color: #f34151;
+}
+
+.header {
+  margin-bottom: 24px;
+  display: flex;
+  > :first-child {
+    text-transform: uppercase;
+    margin-right: 12px;
+  }
+}
+
+.table-container {
+  margin-top: 12px;
+}
+
+.not-entered {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.other {
+  position: absolute;
+  top: 55%;
+  text-align: center;
+  width: 100%;
+}

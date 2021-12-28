@@ -1,0 +1,9 @@
+@import '../../theme.scss';
+
+.root {
+  @media only screen and (min-width: $mobile-width) {
+    svg {
+      @include leading-icon;
+    }
+  }
+}

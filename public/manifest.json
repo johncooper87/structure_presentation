@@ -1,0 +1,15 @@
+{
+  "short_name": "Exon Monitoring",
+  "name": "Exon Monitoring",
+  "icons": [
+    {
+      "src": "app_icon.svg",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

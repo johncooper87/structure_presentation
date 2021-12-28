@@ -1,0 +1,38 @@
+@import '../../theme.scss';
+
+.empty-text {
+  text-align: center;
+}
+
+.click-action {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+:global(.col-2) {
+  :global(.MuiListItemText-root) {
+    @media only screen and (min-width: 600px) {
+      padding-left: 8px;
+    }
+    @media only screen and (max-width: 600px) {
+      margin-top: -6px;
+    }
+  }
+  :global(.MuiListItemText-primary) {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+:global(.MuiListItemText-multiline) {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.cascading-icon {
+  color: rgba(0, 0, 0, 0.54);
+}

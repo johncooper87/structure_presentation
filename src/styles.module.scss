@@ -1,0 +1,338 @@
+//@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+@import './theme.scss';
+
+:root {
+  --color-default-bg: #e5e5e5;
+  --color-second-bg: #232d41;
+  --color-secondary: #6d7f82;
+  --color-toggle-menu: #273247;
+  --color-title: #484848;
+  --color-text: #777777;
+  --color-white: #f7f6ee;
+  --color-red: #fe5c56;
+  --color-green: #5ac13b;
+  --color-yellow: #ffd119;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --color-blue: #478dd1;
+  --color-light-blue: #f4faff;
+  --root-width-sidebar: 260px;
+  --root-heigth-header: 55px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* :focus {
+    outline-style: none;
+    outline-width: 0px !important;
+    outline-color: none !important;
+} */
+
+:focus {
+  outline: none !important;
+}
+::-moz-focus-inner {
+  border: 0px !important;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:global .recent-data {
+  :global .MuiTableCell-body,
+  .MuiTableCell-head {
+    font-size: 12px !important;
+    padding: 16px 8px;
+  }
+}
+
+:global .not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+:global .portal {
+  display: contents;
+}
+
+:global .contents {
+  display: contents;
+}
+
+:global .flex-separator {
+  flex-grow: 1;
+}
+
+:global(.danger.MuiButton-contained) {
+  &:not([disabled]) {
+    background-color: hsl(355deg 68% 60%);
+    color: white;
+    &:hover {
+      background-color: hsl(355deg 68% 40%);
+    }
+  }
+}
+
+:global(.danger) {
+  & :global(.MuiLinearProgress-bar) {
+    background-color: hsl(355deg 68% 60%);
+  }
+}
+
+:global(.MuiDialogActions-root) {
+  flex-wrap: wrap;
+  :global(.MuiLinearProgress-root) {
+    flex-basis: 100%;
+    margin: 8px;
+  }
+}
+
+:global(.invisible) {
+  opacity: 0;
+}
+
+:global(.non-displayed) {
+  display: 'none';
+}
+
+:global(.leading-icon) {
+  @include leading-icon;
+}
+
+:global(.read-only) {
+  input,
+  textarea,
+  :global(.MuiSelect-root),
+  :global(.switch-label) {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  :global(.MuiSelect-icon),
+  :global(.MuiAutocomplete-endAdornment) {
+    visibility: hidden;
+  }
+  label {
+    transition: none;
+  }
+  :global(.MuiFormLabel-root) {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  :global(.MuiChip-deleteIcon),
+  :global(.MuiInputAdornment-root .MuiIconButton-root) {
+    display: none;
+  }
+  :global(.MuiChip-root) {
+    --background-color: #cbcbcb88;
+    opacity: 1;
+  }
+  :global(.MuiSwitch-colorSecondary.Mui-checked) {
+    color: hsl(105deg 45% 60%);
+  }
+  :global(.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track) {
+    background-color: hsl(105deg 40% 65%);
+    transition: none;
+    opacity: 0.5;
+  }
+}
+
+:global(.adornment-mask) {
+  margin-right: 0px;
+  margin-bottom: 4px;
+  :global(.MuiTypography-root) {
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+:global(.MuiFilledInput-root) {
+  :global(.adornment-mask) {
+    margin-bottom: -1px;
+  }
+}
+
+:global(.MuiFormControl-marginDense) {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+// :global(.leaflet-container) {
+//   // background-color: white;
+// }
+:global(.leaflet-tile) {
+  filter: saturate(0.5);
+}
+
+:global(.success) {
+  color: $color-success;
+}
+:global(.alert) {
+  color: $color-alert;
+}
+
+body {
+  --app-bar-tabs-height: 0px;
+}
+
+:global(.bar-tabs-toolbar) {
+  padding-bottom: 12px;
+  :global(.MuiTab-wrapper) {
+    @media only screen and (min-width: $mobile-width) {
+      flex-direction: row;
+      :global(.MuiSvgIcon-root) {
+        margin-right: 12px;
+      }
+    }
+  }
+  :global(.MuiTab-root) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  :global(.MuiTab-labelIcon) {
+    min-height: 54px;
+  }
+}
+
+:global(.MuiBottomNavigationAction-root.Mui-selected) {
+  color: #6d97e4;
+}
+
+:global(.MuiTab-textColorSecondary.Mui-selected) {
+  color: #6d97e4;
+}
+:global(.MuiTabs-indicator) {
+  background-color: #6d97e4;
+}
+:global(.MuiBottomNavigation-root) {
+  > :first-child {
+    padding-left: 24px;
+  }
+  > :last-child {
+    padding-right: 24px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+:global(#print-container) {
+  display: none;
+}
+
+@media print {
+  :global(#main-container),
+  :global(#notifier-container) {
+    display: none;
+  }
+
+  :global(#print-container) {
+    display: unset;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+:global(.readonly) {
+
+  input,
+  textarea,
+  :global(.MuiSelect-root),
+  :global(.MuiFormControlLabel-label) {
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  :global(.MuiFormLabel-root) {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  :global(.MuiFilledInput-root) {
+    background-color: unset;
+    padding-left: 0px;
+  }
+
+  :global(.MuiFormHelperText-filled) {
+    margin-left: 0px;
+  }
+  :global(.MuiFilledInput-input) {
+    padding-left: 0px;
+  }
+  :global(.MuiAutocomplete-inputRoot) {
+    padding-left: 0px;
+    > :global(.MuiAutocomplete-input.MuiFilledInput-input) {
+      padding-left: 0px;
+    }
+  }
+  :global(.MuiInputLabel-filled) {
+    margin-left: -12px;
+  }
+
+  :global(.MuiFormLabel-asterisk) {
+    display: none;
+  }
+
+  :global(.MuiSelect-icon),
+  :global(.MuiAutocomplete-endAdornment) {
+    visibility: hidden;
+  }
+
+  :global(.MuiChip-deleteIcon),
+  :global(.MuiInputAdornment-root .MuiIconButton-root) {
+    display: none;
+  }
+  :global(.MuiChip-root) {
+    --background-color: #cbcbcb88;
+    opacity: 1;
+    margin-left: 0px;
+  }
+  :global(.Mui-checked) {
+    color: hsl(105deg 45% 60%);
+  }
+  :global(.Mui-checked + .MuiSwitch-track) {
+    background-color: hsl(105deg 40% 65%);
+    opacity: 0.5;
+  }
+}
+

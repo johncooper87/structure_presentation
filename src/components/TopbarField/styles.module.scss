@@ -1,0 +1,13 @@
+.root {
+  width: 100%;
+  max-width: 350px;
+  :global(.MuiInputBase-root) {
+    color: inherit;
+  }
+  :global(.MuiFormControl-root) {
+    margin: 0px;
+  }
+  :global(.MuiInput-underline:before) {
+    border-bottom-color: transparent !important;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../theme.scss';
+
+.root {
+  display: flex;
+}
+
+.content {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  @media only screen and (min-width: $mobile-width) {
+    padding: 12px 24px;
+    padding-left: calc(var(--minimized-leftbar-width, 0px) + 24px);
+    padding-right: calc(var(--rightbar-width, 0px) + 24px);
+    width: calc(100% - var(--rightbar-width, 0px) - 24px);
+    margin-top: calc(var(--topbar-height) + var(--topbar-extra-height, 0px));
+  }
+  @media only screen and (min-width: $tablet-width) {
+    padding: 12px 24px;
+    padding-left: calc(var(--leftbar-width, 0px) + 24px);
+    padding-right: calc(var(--rightbar-width, 0px) + 24px);
+    width: calc(100% - var(--rightbar-width, 0px) - 24px);
+    margin-top: calc(var(--topbar-height) + var(--topbar-extra-height, 0px));
+  }
+  @media only screen and (max-width: $mobile-width) {
+    padding: 6px 12px;
+    margin-top: var(--topbar-height);
+    padding-bottom: calc(var(--bottom-bar-height) + 6px);
+  }
+  // @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+    transition: padding 225ms cubic-bezier(0, 0, 0.2, 1);
+  // }
+}
+
+body {
+  @media only screen and (min-width: $mobile-width) {
+    --topbar-height: var(--topbar-base-height);
+  }
+  @media only screen and (max-width: $mobile-width) {
+    --topbar-height: var(--topbar-base-height);
+  }
+}

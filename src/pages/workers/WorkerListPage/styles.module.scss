@@ -1,0 +1,10 @@
+.worker-avatar {
+  min-width: 70px;
+  & :global(.MuiAvatar-root) {
+    width: 54px;
+    height: 54px;
+  }
+  :global(.MuiSvgIcon-root) {
+    font-size: 32px;
+  }
+}

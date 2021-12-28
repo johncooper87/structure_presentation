@@ -1,0 +1,25 @@
+@import '../../theme';
+
+.worker-marker-icon {
+  width: 36px;
+  height: 60px;
+  margin-left: -6px;
+  margin-top: -10px;
+  fill: white;
+  .outer {
+    fill: var(--outer-color, dodgerblue)
+  }
+  .inner {
+    fill: var(--inner-color, dodgerblue)
+  }
+}
+
+.worker-alert-icon {
+  --inner-color: #{$color-alert};
+  --outer-color: #{$color-alert};
+}
+
+.worker-success-icon {
+  --inner-color: #{$color-success};
+  --outer-color: #{$color-success};
+}

@@ -1,0 +1,20 @@
+@import '../../../theme';
+
+.nav-item {
+  border-left: 4px solid transparent;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  &:global(.Mui-selected) {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: $color-secondary-main;
+  }
+  &:global(.Mui-selected):hover {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+
+  & > :global(.MuiListItemIcon-root) {
+    color: $color-secondary-light;
+    min-width: 40px;
+  }
+}

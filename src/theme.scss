@@ -1,0 +1,27 @@
+// $color-secondary-main: #2c7cb2;
+// $color-secondary-main: hsl(184deg 43% 36%);
+// $color-secondary-light: #66abe4;
+$color-secondary-main: hsl(222deg 27% 37%);
+$color-secondary-light: hsl(210deg 48% 67%);
+
+// $color-primary-main: #242f44;
+// $color-primary-main: hsl(219deg 24% 16%);
+$color-primary-main: hsl(222deg 27% 37%);
+$color-primary-dark: hsl(226deg 26% 16%);
+
+$color-alert: #f34151;
+
+$maximized-leftbar-width: 300px;
+$minimized-leftbar-width: 64px;
+$rightbar-width: 400px;
+
+$mobile-width: 960px;
+$tablet-width: 1280px;
+
+$topbar-z-index: 1100;
+
+@mixin leading-icon {
+  margin-right: 8px;
+}
+
+$color-success: hsl(105deg 45% 70%);

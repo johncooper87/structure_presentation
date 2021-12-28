@@ -1,0 +1,146 @@
+@import '../../../theme.scss';
+
+.controls {
+  display: flex;
+  :global(.MuiAutocomplete-popupIndicator) {
+    margin-right: 0px;
+  }
+  :global(.date-picker) {
+    width: 132px;
+  }
+  > :not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.controls-vertical {
+  display: flex;
+  flex-direction: column;
+  > :not(:last-child) {
+    margin-bottom: 24px;
+  }
+  :global(.time-picker) {
+    width: 144px;
+  }
+}
+
+.autocomplete {
+  width: 200px;
+}
+
+.content {
+  height: calc(100% - 51px);
+}
+
+.empty {
+  text-align: center;
+  padding: 12px;
+}
+
+.absent-workers {
+  $root-item-margin: 12px;
+  > :not(:last-child) {
+    margin-bottom: $root-item-margin;
+  }
+  > :last-child {
+    position: absolute;
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100% - #{$root-item-margin} - 51px - #{$root-item-margin} - 19px);
+    > :not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.site-monitoring {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 12px;
+    > span {
+      min-width: 24px;
+      font-size: 14px;
+    }
+  }
+}
+
+.worker-state-marker {
+  --inner-color: var(--color);
+  --outer-color: var(--color);
+}
+
+.worker-state-avatar {
+  min-width: 0px;
+  margin-right: 12px;
+  :global(.MuiAvatar-root) {
+    width: 28px;
+    height: 28px;
+    background-color: var(--color);
+  }
+}
+
+.worker-state-alert {
+  --color: #{$color-alert};
+}
+.worker-state-invalid {
+  --color: black;
+}
+.worker-state-recent-checked {
+  --color: #{$color-success};
+}
+.worker-state-recent-unchecked {
+  --color: grey;
+}
+.worker-state-lagging {
+  --color: orange;
+}
+.worker-state-very-lagging {
+  --color: lightgrey;
+}
+
+.map-widget-tooltip {
+  max-height: 200px;
+  overflow-y: auto;
+  :global(.MuiListItem-root) {
+    align-items: center;
+  }
+  :global(.MuiListItemText-primary) {
+    font-size: 14px;
+  }
+  :global(.MuiListItemText-secondary) {
+    font-size: 12px;
+  }
+  .secondary-action {
+    margin-left: 8px;
+    svg {
+      fill: #82abd3;
+    }
+  }
+  .polygon-tooltip {
+    padding: 8px;
+    font-size: 12px;
+  }
+  :global(.MuiTypography-root) {
+    font-size: 12px;
+    display: block;
+  }
+}
+
+.worker-monitor-drawer-paper {
+  padding: 24px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.worker-monitor-fab-container {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  padding: 8px;
+  :global(.MuiFab-root) {
+    background-color: white;
+  }
+}

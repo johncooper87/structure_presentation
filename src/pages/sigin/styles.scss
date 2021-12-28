@@ -1,0 +1,50 @@
+@import '../../theme.scss';
+
+.carousel {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  max-width: 600px;
+}
+.carousel .slider-wrapper {
+  overflow: visible !important;
+}
+
+.carousel .slide .legend {
+  background: none;
+  color: #000;
+  opacity: 1;
+  bottom: -96px;
+  @media only screen and (max-width: $mobile-width) {
+    background-color: #0006;
+    color: white;
+    bottom: 32px;
+  }
+}
+.carousel .slide .legend .legend__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.carousel .slide .legend .legend__text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.carousel .control-dots .dot {
+  background: #ebeff1;
+  opacity: 1;
+}
+.carousel .control-dots .dot:focus {
+  outline: none;
+}
+.carousel .control-dots .dot:hover {
+  background: #478dd1ab;
+}
+.carousel .control-dots .dot.selected {
+  background: #478dd1;
+}

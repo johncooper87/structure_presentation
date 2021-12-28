@@ -1,0 +1,24 @@
+@import '../../theme.scss';
+
+.root {
+  position: fixed;
+  display: flex;
+  gap: 12px;
+  z-index: $topbar-z-index + 1;
+  @media only screen and (min-width: $mobile-width) {
+    left: calc(var(--minimized-leftbar-width) + 24px);
+    flex-direction: row;
+    top: calc(var(--topbar-base-height) - var(--topbar-extra-height));
+  }
+  @media only screen and (min-width: $tablet-width) {
+    left: calc(var(--leftbar-width) + 24px);
+  }
+  @media only screen and (max-width: $mobile-width) {
+    flex-direction: column-reverse;
+    bottom: 24px;
+    right: 24px;
+  }
+  :global(.MuiFab-root.Mui-disabled) {
+    background-color: rgb(224, 224, 224);
+  }
+}
